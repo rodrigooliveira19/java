@@ -18,6 +18,7 @@ public class Main {
 			System.out.println(x * y);
 		}; 
 		
+		
 		//SE NÃO UTILIZAR CHAVES NÃO É NECESSÁRIO COLOCAR O RETURN 
 		CalculatorComReturn calcR = p -> p * p; 
 		
@@ -41,7 +42,13 @@ public class Main {
 		list.add(6); 
 		list.removeIf((e) -> e % 2 != 0); 
 		list.forEach(e->System.out.println(e));
+		//ou 
+		list.forEach(System.out::println);
 		
+		
+		List<String> nomes = Arrays.asList("rodrigo","marcos","joana","tarcia", "luisa"); 
+		nomes.replaceAll(String::toUpperCase);
+		nomes.forEach(System.out::println);
 		
 	}
 
