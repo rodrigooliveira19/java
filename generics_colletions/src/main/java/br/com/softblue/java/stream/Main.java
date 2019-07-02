@@ -86,6 +86,8 @@ public class Main {
 				               .map(p -> String.format("%d:%s:%.2f", p.getId(), p.getNome(), p.getPreco()))
 				               .collect(Collectors.joining(";")); 
 		System.out.println(prods); 
+		
+	
 	}
 
 }
