@@ -1,13 +1,15 @@
 package br.com.softblue.java.concurrent;
 
+import java.util.Arrays;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ForkJoinPool;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		execute4();
+		execute5();
 		
 
 	}
@@ -81,6 +83,20 @@ public class Main {
 		}
 		
 		service.shutdown();
+	}
+	
+	
+	public static void execute5() {
+		
+		int[] array = new int[4]; 
+		Arrays.fill(array, 1);
+		
+		SumArray sumArray = new SumArray(array, 0, array.length - 1); 
+		ForkJoinPool forkJoin = new ForkJoinPool(); 
+		
+		int sum = forkJoin.invoke(sumArray); 
+		
+		System.out.println("Soma :"+sum);
 		
 	}
 		
