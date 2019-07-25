@@ -37,7 +37,7 @@ public class SumArray extends RecursiveTask<Integer>{
 		SumArray leftTask = new SumArray(array, min, min + half); 
 		SumArray rightTask = new SumArray(array, min + half +1, max); 
 		
-		leftTask.fork() ; 
+		leftTask.fork(); 
 		rightTask.fork(); 
 		
 		int leftTaskSum = leftTask.join(); 
